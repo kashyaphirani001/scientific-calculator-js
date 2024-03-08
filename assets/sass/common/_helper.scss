@@ -1,0 +1,67 @@
+.cd-wrap {
+  flex-wrap: wrap;
+}
+
+.cd-flex-row {
+  flex-direction: row;
+}
+
+.cd-flex-column {
+  @include flexColumn;
+}
+
+.cd-align-center {
+  @include align-item-center;
+}
+
+.cd-just-around {
+  justify-content: space-around;
+}
+
+.cd-just-evenly {
+  justify-content: space-evenly;
+}
+
+.cd-just-between {
+  @include space-between;
+}
+
+.cd-just-center {
+  @include flexCenter();
+}
+
+.cd-flex {
+  @include flexbox();
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-primary {
+  @include btn-primary;
+}
+
+.btn-secondary {
+  @include btn-secondary;
+}
+
+.btn-lg {
+  @include btn-lg;
+}
+
+.btn-medium {
+  @include btn-medium;
+}
+
+.btn-small {
+  @include btn-small;
+}
+
+.text-white-color {
+  color: var(--data-white-color);
+}
+
+.text-bold {
+  font-weight: 700;
+}

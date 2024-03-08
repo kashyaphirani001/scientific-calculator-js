@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/sass/pages/home.css" />
+  </head>
+  <body>
+    <main>
+      <section class="calculator-section">
+        <div class="container">
+          <div class="calculator">
+            <div class="calculator-wrapper">
+              <div>
+                <input id="user-input" class="user-value" type="text" placeholder="0" disabled>
+              </div>
+
+              <div class="calculator-buttons">
+                  <button onclick="backSpace()">CE</button>
+                  <button onclick="factorial()">x!</button>
+                  <button class="btn">(</button>
+                  <button class="btn">)</button>
+                  <button class="btn">%</button>
+                  <button id="clear-input">AC</button>
+
+                  <button onclick="calculateSinValue()">sin</button>
+                  <button onclick="piValue()">π</button>
+                  <button class="btn">7</button>
+                  <button class="btn">8</button>
+                  <button class="btn">9</button>
+                  <button class="btn">÷</button>
+
+                  <button onclick="calculateCosValue()">cos</button>
+                  <button onclick="calculateLogValue()">log</button>
+                  <button class="btn">4</button>
+                  <button class="btn">5</button>
+                  <button class="btn">6</button>
+                  <button class="btn">×</button>
+
+                  <button onclick="calculateTanValue()">tan</button>
+                  <button onclick="calculateSqrt()">√</button>
+                  <button class="btn">1</button>
+                  <button class="btn">2</button>
+                  <button class="btn">3</button>
+                  <button class="btn">-</button>
+
+                  <button onclick="eulerNumber()">e</button>
+                  <button onclick="calculatePow()"><p>X <sup>2</sup> </p></button>
+                  <button class="btn">0</button>
+                  <button class="btn">.</button>
+                  <button id="result">=</button>
+                  <button class="btn">+</button>
+              </div>
+
+            
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/home.js"></script>
+  </body>
+</html>

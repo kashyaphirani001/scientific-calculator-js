@@ -1,0 +1,150 @@
+// @import "../common/mixin";
+
+/* reset css start  */
+html,
+body,
+ul,
+i,
+li,
+form,
+header,
+section,
+div,
+p,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+span,
+ol,
+button,
+img,
+picture,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* reset css end  */
+
+/* common css start */
+a {
+  outline: none;
+  text-decoration: none;
+  @include font-detail(18px, 22px);
+  transition: all 0.4s ease;
+}
+
+*,
+*::before,
+*::after {
+  @include box(border-box);
+}
+
+h1,
+.h1 {
+  @include h1;
+}
+
+h2,
+.h2 {
+  @include h2;
+}
+
+h3,
+.h3 {
+  @include h3;
+}
+h4,
+h4 {
+  @include h4;
+}
+
+h5,
+.h5 {
+  @include h5;
+}
+
+h6,
+.h6 {
+  @include h6;
+}
+
+p {
+  @include font-detail(16px, 24px);
+}
+
+.btn {
+  @include button;
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+}
+
+
+ul li {
+  font-size: 16px;
+  list-style: none;
+  position: relative;
+}
+
+body {
+  @include body-font;
+  background: #0a0a0a;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+

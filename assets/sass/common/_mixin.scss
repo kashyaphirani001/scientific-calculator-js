@@ -1,0 +1,504 @@
+@mixin font-family($face, $weight) {
+  font-family: $face;
+  font-weight: $weight;
+}
+
+@mixin media-query($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin font-detail($font-size-value, $line-height-value) {
+  font-size: $font-size-value;
+  line-height: $line-height-value;
+}
+@mixin common-font-size {
+  @include font-detail(16px, 20px);
+  @media only screen and (min-width: $device-lg) {
+    @include font-detail(18px, 24px);
+  }
+}
+
+@mixin body-font {
+  @include font-family(var(--font-primary), 400);
+  @include common-font-size;
+  font-style: normal;
+  letter-spacing: normal;
+  color: var(--data-white-color);
+}
+
+@mixin font-xl {
+  @include font-detail(32px, 40px);
+  @include font-family(var(--font-primary), normal);
+  @media only screen and (min-width: $device-md) {
+    @include font-detail(48px, 63px);
+  }
+  @media only screen and (min-width: $device-lg) {
+    @include font-detail(85px, 103px);
+  }
+}
+
+@mixin font-lg {
+  @include font-detail(30px, 42px);
+  @include font-family(var(--font-primary), 600);
+  margin-bottom: 0;
+  @media only screen and (min-width: $device-md) {
+    @include font-detail(38px, 40px);
+  }
+  @media only screen and (min-width: $device-lg) {
+    @include font-detail(42px, 63px);
+  }
+}
+
+@mixin font-md {
+  @include font-family(var(--font-primary), 600);
+  @include font-detail(22px, 33px);
+  margin-bottom: 0;
+  @media only screen and (min-width: $device-md) {
+    @include font-detail(28px, 34px);
+  }
+  @media only screen and (min-width: $device-lg) {
+    @include font-detail(36px, 55px);
+  }
+}
+
+@mixin font-sl {
+  @include font-detail(18px, 27px);
+  @include font-family(var(--font-primary), 600);
+  margin-bottom: 0;
+  @media only screen and (min-width: $device-md) {
+    @include font-detail(24px, 26px);
+  }
+  @media only screen and (min-width: $device-lg) {
+    @include font-detail(20px, 30px);
+  }
+}
+
+@mixin font-sm {
+  @include font-detail(20px, 30px);
+  @include font-family(var(--font-primary), 600);
+  margin-bottom: 0;
+  @media only screen and (min-width: $device-md) {
+    @include font-detail(22px, 30px);
+  }
+  @media only screen and (min-width: $device-lg) {
+    @include font-detail(24px, 27px);
+  }
+}
+
+@mixin font-xs {
+  @include font-detail(16px, 24px);
+  @include font-family(var(--font-primary), 600);
+  margin-bottom: 0;
+  @media only screen and (min-width: $device-md) {
+    @include font-detail(17px, 22px);
+  }
+  @media only screen and (min-width: $device-lg) {
+    @include font-detail(18px, 27px);
+  }
+}
+
+@mixin font-xxs {
+  @include font-detail(18px, 27px);
+  @include font-family(var(--font-primary), 600);
+  margin-bottom: 0;
+  @media only screen and (min-width: $device-md) {
+    @include font-detail(24px, 26px);
+  }
+  @media only screen and (min-width: $device-lg) {
+    @include font-detail(26px, 39px);
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin opacity($opacity) {
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  -o-opacity: $opacity;
+  -ms-opacity: $opacity;
+  opacity: $opacity;
+}
+
+@mixin transition($seconds, $timing: ease) {
+  -webkit-transition: all $seconds ease;
+  -moz-transition: all $seconds ease;
+  -ms-transition: all $seconds ease;
+  -o-transition: all $seconds ease;
+  transition: all $seconds $timing;
+}
+
+@mixin transform($property) {
+  -o-transform: $property;
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  -moz-transform: $property;
+  transform: $property;
+}
+
+@mixin flexbox() {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin transform-scale($scalevalue) {
+  -webkit-transform: scale($scalevalue);
+  -moz-transform: scale($scalevalue);
+  -ms-transform: scale($scalevalue);
+  -o-transform: scale($scalevalue);
+  transform: scale($scalevalue);
+}
+
+@mixin transform-translateY($translatevalue) {
+  transform: translateY($translatevalue);
+  -webkit-transform: translateY($translatevalue);
+  -moz-transform: translateY($translatevalue);
+  -ms-transform: translateY($translatevalue);
+  -o-transform: translateY($translatevalue);
+}
+
+@mixin gridbox() {
+  display: -ms-grid;
+  display: grid;
+}
+
+@mixin flexCenter() {
+  @include flexbox;
+  @include align-item-center;
+  @include justifyCenter;
+}
+
+@mixin text-shadow($x-axis, $y-axis, $blur, $color) {
+  -ms-text-shadow: $x-axis $y-axis $blur $color;
+  -o-text-shadow: $x-axis $y-axis $blur $color;
+  -webkit-text-shadow: $x-axis $y-axis $blur $color;
+  -moz-text-shadow: $x-axis $y-axis $blur $color;
+  text-shadow: $x-axis $y-axis $blur $color;
+}
+
+@mixin box-shadow($x-axis, $y-axis, $blur, $color) {
+  -ms-box-shadow: $x-axis $y-axis $blur $color;
+  -o-box-shadow: $x-axis $y-axis $blur $color;
+  -webkit-box-shadow: $x-axis $y-axis $blur $color;
+  -moz-box-shadow: $x-axis $y-axis $blur $color;
+  box-shadow: $x-axis $y-axis $blur $color;
+}
+
+@mixin box-shadow-none {
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin box($property) {
+  box-sizing: $property;
+  -moz-box-sizing: $property;
+  -webkit-box-sizing: $property;
+  -o-box-sizing: $property;
+}
+
+@mixin text-clamp($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 100%;
+}
+
+@mixin space-none {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin bg-cmn {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin figure {
+  margin: 0;
+  display: inherit;
+}
+
+@mixin ul-disc-style {
+  list-style: disc;
+}
+
+@mixin ol-decimal-style {
+  list-style: decimal;
+}
+
+@mixin ol-circle-style {
+  list-style: circle;
+}
+
+@mixin list-left-space {
+  padding-left: 20px;
+}
+
+@mixin h1 {
+  @include font-lg;
+}
+
+@mixin h2 {
+  @include font-md;
+}
+
+@mixin h3 {
+  @include font-sl;
+}
+
+@mixin h4 {
+  @include font-sm;
+}
+
+@mixin h5 {
+  @include font-xs;
+}
+
+@mixin h6 {
+  @include font-xxs;
+}
+
+@mixin row {
+  @include flexbox;
+  @include flexrow;
+  @include flexwrap;
+  margin: 0 -15px;
+
+  .d-col {
+    @include flexbox;
+    @include flexwrap;
+    padding: 0 15px;
+    width: 100%;
+    margin-bottom: 15px;
+    @media only screen and (min-width: $device-md) {
+    }
+    @media only screen and (min-width: $device-xl) {
+      padding: 0 20px;
+    }
+    &.d-col-2 {
+      width: 100%;
+      @media only screen and (min-width: $device-md) {
+        width: 50%;
+      }
+    }
+    &.d-col-3 {
+      width: 100%;
+      @media only screen and (min-width: $device-md) {
+        width: 50%;
+      }
+      @media only screen and (min-width: $device-xl) {
+        width: 33.33%;
+      }
+    }
+    &.d-col-4 {
+      width: 100%;
+      @media only screen and (min-width: $device-md) {
+        width: 50%;
+      }
+      @media only screen and (min-width: $device-lg) {
+        width: 33.33%;
+      }
+      @media only screen and (min-width: $device-xl) {
+        width: 25%;
+      }
+    }
+    &.d-col-33 {
+      width: 100%;
+      @media only screen and (min-width: $device-lg) {
+        width: 33.33%;
+      }
+    }
+    &.d-col-66 {
+      width: 100%;
+      @media only screen and (min-width: $device-lg) {
+        width: 66.66%;
+      }
+    }
+  }
+}
+
+@mixin align-item-center {
+  align-items: center;
+}
+
+@mixin align-item-end {
+  align-items: flex-end;
+}
+
+@mixin align-item-start {
+  align-items: flex-start;
+}
+
+@mixin just-center {
+  justify-content: center;
+}
+
+@mixin just-end {
+  justify-content: end;
+}
+
+@mixin just-start {
+  justify-content: start;
+}
+
+@mixin space-between {
+  justify-content: space-between;
+}
+
+@mixin flexrow {
+  flex-direction: row;
+}
+
+@mixin flexColumn {
+  flex-direction: column;
+}
+
+@mixin justifyCenter {
+  justify-content: center;
+}
+
+@mixin flexwrap {
+  flex-wrap: wrap;
+}
+
+@mixin textCenter {
+  text-align: center;
+}
+
+@mixin button {
+  display: block;
+  @include font-family(var(--font-primary), 600);
+  text-align: center;
+  @include transition(0.3s, ease-out);
+  outline: none;
+  cursor: pointer;
+  @include border-radius(8px);
+  @include box-shadow-none;
+  text-decoration: none !important;
+  position: relative;
+  border: 1px solid var(--data-stoplight-go-green-color);
+  padding: 8px 15px;
+  @include font-detail(16px, 25px);
+  @media only screen and (min-width: $device-lg) {
+    padding: 12px 40px;
+    @include font-detail(18px, 27px);
+  }
+}
+
+@mixin btn-extra-large {
+  max-width: 742px;
+  width: 100%;
+  height: 50px;
+  @media only screen and (min-width: $device-lg) {
+    height: 70px;
+  }
+}
+
+@mixin btn-large {
+  max-width: 713px;
+  width: 100%;
+}
+
+@mixin btn-lg {
+  max-width: 330px;
+  width: 100%;
+}
+
+@mixin btn-medium {
+  max-width: 216px;
+  width: 100%;
+}
+
+@mixin btn-small {
+  max-width: 200px;
+  width: 100%;
+}
+
+@mixin btn-icon {
+  max-width: 50px;
+  width: 100%;
+  @include flexCenter;
+  i {
+    color: var(--data-stoplight-go-green-color);
+  }
+}
+
+@mixin btn-primary {
+  background: transparent linear-gradient(90deg, #71f550 0%, #06bfd3 100%) 0% 0% no-repeat padding-box;
+  color: var(--data-white-color);
+  border-color: transparent;
+
+  @include media-query($device-md) {
+    background: var(--data-white-color);
+    color: var(--data-stoplight-go-green-color);
+    border-color: var(--data-stoplight-go-green-color);
+
+    &:hover {
+      background: transparent linear-gradient(90deg, #71f550 0%, #06bfd3 100%) 0% 0% no-repeat padding-box;
+      color: var(--data-white-color);
+      border-color: transparent;
+    }
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.75;
+    background: var(--data-white-color);
+    color: var(--data-stoplight-go-green-color);
+    border-color: var(--data-stoplight-go-green-color);
+  }
+}
+
+@mixin btn-secondary {
+  background-color: var(--data-white-color);
+  color: var(--data-dark-turquoise-color);
+  padding: 10px 10px;
+  border-color: var(--data-dark-turquoise-color);
+  @include border-radius(26px);
+
+  @include media-query($device-md) {
+    background-color: transparent;
+    color: var(--data-white-color);
+    padding: 10px 10px;
+    border-color: var(--data-white-color);
+    @include border-radius(26px);
+    &:hover {
+      background-color: var(--data-white-color);
+      color: var(--data-dark-turquoise-color);
+      border-color: var(--data-dark-turquoise-color);
+    }
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.75;
+    background: var(--data-white-color);
+    color: var(--data-stoplight-go-green-color);
+    border-color: transparent;
+  }
+}
+
+@mixin subtitle {
+  @include font-detail(16px, 20px);
+  @include font-family(var(--data-black-color), 500);
+  @media only screen and (min-width: $device-md) {
+    @include font-detail(20px, 28px);
+  }
+  @media only screen and (min-width: $device-xl) {
+    @include font-detail(24px, 36px);
+  }
+}
